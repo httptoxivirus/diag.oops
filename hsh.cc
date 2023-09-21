@@ -1,50 +1,55 @@
 #include<iostream>
 using namespace std;
-class employee
-{
+class employee {
     int id;
     string name;
     int salary;
+    static string company;
     public:
-    static string companyName;
+    employee(int id, string name, int salary) {
+        this->id = id;
+        this->name = name;
+        this->salary = salary;
+    }
     
- void setId(int id) {
-    this->id = id;
- }
+    void setId(int id) {
+        this->id = id;
+    }
+    
+    void setName(string name) {
+        this->name = name;
+    }
+    
+    void setSalary(int salary) {
+        this->salary = salary;
+    }
+    
+    int getId() {
+        return id;
+    }
+    
+    string getName() {
+        return name;
+    }
+    
+    int getSalary() {
+        return salary;
+    }
+    
+    static string getCompanyName() {
+        return company;
+    }
+    
+};
 
- void setName(string name) {
-    this->name = name;
- }
- 
- void setSalary(int salary) {
-  this->salary = salary;
-  }
-  
-  int getId() {
-   return id;
-  }
-   
-  string getName() {
-    return name;
-   }
-   
-  int getSalary() {
-    return salary;
-   }
-    
- };
-    
- string employee::companyName = "Apple";;
+string employee:: company = "Apple";
 
-int main() {
-    employee e1;
-    e1.setId(22011);
-    e1.setName("Kunal");
-    e1.setSalary(200000);
-    cout<<"\n"<<endl;
-    cout<<e1.getId()<<endl;
-    cout<<e1.getName()<<endl;
-    cout<<e1.getSalary()<<endl;
-    cout<<employee::companyName;
+int main() 
+{
+    employee e(22011,"Kunal",200000);
+    cout<<e.getId()<<"   ";
+    cout<<e.getName()<<"  ";
+    cout<<e.getSalary()<<"  ";
+    cout<<employee::getCompanyName();
     return 0;
 }
