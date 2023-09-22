@@ -52,6 +52,7 @@ int main()
 {
     int n,id,salary;
     string name;
+    // employee e[2] = {employee(22011,"Kunal",20000),employee(22012,"Rahul",30000)};
     employee e[10];
     cout<<"Enter the number of elements you wanna create \n";
     cin>>n;
