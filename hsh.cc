@@ -6,6 +6,10 @@ class employee {
     int salary;
     static string company;
     public:
+    employee() {
+        
+        
+    }
     employee(int id, string name, int salary) {
         this->id = id;
         this->name = name;
@@ -46,10 +50,28 @@ string employee:: company = "Apple";
 
 int main() 
 {
-    employee e(22011,"Kunal",200000);
-    cout<<e.getId()<<"   ";
-    cout<<e.getName()<<"  ";
-    cout<<e.getSalary()<<"  ";
-    cout<<employee::getCompanyName();
+    int n,id,salary;
+    string name;
+    employee e[10];
+    cout<<"Enter the number of elements you wanna create \n";
+    cin>>n;
+    for(int i=0; i<n; i++) {
+        cout<<"Enter the id of "<<i<<"th element"<<endl;
+        cin>>id;
+        e[i].setId(id);
+        cout<<"Enter the name of "<<i<<"th element"<<endl;
+        cin>>name;
+        e[i].setName(name);
+        cout<<"Enter the salary of "<<i<<"th element"<<endl;
+        cin>>salary;
+        e[i].setSalary(salary);
+    }
+    for(int j=0; j<n; j++) {
+        cout<<e[j].getId()<<"  ";
+        cout<<e[j].getName()<<" ";
+        cout<<e[j].getSalary()<<"  ";
+        cout<<employee::getCompanyName();
+        cout<<endl;
+    }
     return 0;
 }
